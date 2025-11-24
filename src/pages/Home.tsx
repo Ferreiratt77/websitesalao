@@ -33,7 +33,7 @@ const Home = () => {
     <div className="space-y-12">
       <section className="text-center space-y-4 py-12">
         <h1 className="text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-          Bem-vindo ao Salão Elegance
+          Bem-vindo ao Vanda Hair
         </h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           Sistema completo de gerenciamento para seu salão de beleza. 

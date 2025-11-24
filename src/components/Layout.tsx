@@ -20,7 +20,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <Link to="/" className="flex items-center gap-2 font-bold text-xl">
               <Sparkles className="h-6 w-6 text-primary" />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Salão Elegance
+                Vanda Hair
               </span>
             </Link>
 
