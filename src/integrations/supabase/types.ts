@@ -14,7 +14,90 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      agendamentos: {
+        Row: {
+          cliente_id: number
+          created_at: string | null
+          data: string
+          horario: string
+          id: number
+          servico_id: number
+        }
+        Insert: {
+          cliente_id: number
+          created_at?: string | null
+          data: string
+          horario: string
+          id?: number
+          servico_id: number
+        }
+        Update: {
+          cliente_id?: number
+          created_at?: string | null
+          data?: string
+          horario?: string
+          id?: number
+          servico_id?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "agendamentos_cliente_id_fkey"
+            columns: ["cliente_id"]
+            isOneToOne: false
+            referencedRelation: "clientes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "agendamentos_servico_id_fkey"
+            columns: ["servico_id"]
+            isOneToOne: false
+            referencedRelation: "servicos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      clientes: {
+        Row: {
+          created_at: string | null
+          id: number
+          nome: string
+          telefone: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: number
+          nome: string
+          telefone: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: number
+          nome?: string
+          telefone?: string
+        }
+        Relationships: []
+      }
+      servicos: {
+        Row: {
+          created_at: string | null
+          id: number
+          nome: string
+          preco: number
+        }
+        Insert: {
+          created_at?: string | null
+          id?: number
+          nome: string
+          preco: number
+        }
+        Update: {
+          created_at?: string | null
+          id?: number
+          nome?: string
+          preco?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

@@ -55,19 +55,11 @@ const Agendamentos = () => {
       return;
     }
 
-    const cliente = clientes.find((c) => c.id === parseInt(clienteId));
-    const servico = servicos.find((s) => s.id === parseInt(servicoId));
-
-    if (!cliente || !servico) {
-      toast.error("Cliente ou serviço inválido");
-      return;
-    }
-
     mutation.mutate({
       data,
       horario,
-      cliente,
-      servico,
+      cliente_id: parseInt(clienteId),
+      servico_id: parseInt(servicoId),
     });
   };
 
